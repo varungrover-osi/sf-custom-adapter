@@ -6,6 +6,7 @@ global class DataSourceConnectionForMongo extends DataSource.Connection {
     }
     
     //Method to Sync the metadata
+    //This is a sample schema, change your schema according to your external data tables/entities.
     override global List<DataSource.Table> sync() {
         List<DataSource.Table> tables = new List<DataSource.Table>();
         List<DataSource.Column> columns;
@@ -204,10 +205,10 @@ return null;
         
         //Set HTTPRequest method
         req.setMethod('GET');
-        //req.setHeader('application-id', 'EC7B9144-A6E2-B6CD-FF66-1EFEC3B14900');
-    //req.setHeader('secret-key','8618CFD9-3E99-4743-FF9B-232184DAD900');
+        //req.setHeader('application-id', 'xxxxxxxxxxxxxxxxxxxxx');
+    //req.setHeader('secret-key','xxxxxxxxxxxxxxxxxxxxx');
     //req.setHeader('application-type','REST');
-    req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC?l=1000&apiKey=u8GlhkDuIEFpBa6KuNv5Xnlz-XJwR1xq');
+    req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC?l=1000&apiKey=yourmongolabkey');
 
     Http http = new Http();
     //Execute web service call here      
@@ -235,7 +236,7 @@ return null;
         req.setMethod('POST');
         req.setHeader('application-type','REST');
         req.setHeader('Content-Type','application/json');
-        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC?apiKey=u8GlhkDuIEFpBa6KuNv5Xnlz-XJwR1xq');
+        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC?apiKey=yourmongolabkey');
         req.setBody(jsonBody);
 
         Http http = new Http();
@@ -263,11 +264,8 @@ return null;
 
         //Set HTTPRequest method
         req.setMethod('PUT');
-        req.setHeader('application-id', 'EC7B9144-A6E2-B6CD-FF66-1EFEC3B14900');
-        req.setHeader('secret-key','8618CFD9-3E99-4743-FF9B-232184DAD900');
-        req.setHeader('application-type','REST');
         req.setHeader('Content-Type','application/json');
-        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC/' + externalId + '?apiKey=u8GlhkDuIEFpBa6KuNv5Xnlz-XJwR1xq');
+        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC/' + externalId + '?apiKey=yourmongolabkey');
         req.setBody(jsonBody);
 
         Http http = new Http();
@@ -296,7 +294,7 @@ return null;
         //Set HTTPRequest method
         req.setMethod('DELETE');
         req.setHeader('application-type','REST');
-        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC/' + externalId + '?apiKey=u8GlhkDuIEFpBa6KuNv5Xnlz-XJwR1xq');
+        req.setEndpoint('https://api.mlab.com/api/1/databases/cricket/collections/MatchPointsPOC/' + externalId + '?apiKey=yourmongolabkey');
         
         Http http = new Http();
     //Execute web service call here      
